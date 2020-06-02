@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Catwork | お問い合わせフォーム</title>
+    <meta name="description" content="名古屋市の歯科医院Catwork。歯の治療に関することで、お悩み・ご相談がありましたらお気軽にお問い合わせください。丁寧な説明を心がけ、患者様が納得された上で治療を行ってまいります。">
+    <link href="mfp.statics/mailformpro.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="wrap contact common">
+
+        <header id="header" class="header">
+            <div class="inner clearfix">
+                <div class="logo"><a href="index.html"><img src="images/header_logo.png" alt="歯科医院キャットワーク"></a></div>
+
+                <nav class="glonav pc">
+                    <ul>
+                        <li><a href="#">初めての方へ</a></li>
+                        <li><a href="index.html#about">当院のご紹介</a></li>
+                        <li><a href="index.html#medical">診療案内</a></li>
+                        <li><a href="#">インプラント</a></li>
+                        <li><a href="index.html#recruit">採用情報</a></li>
+                        <li><a href="index.html#info">診療時間</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <ul class="humberger sp">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <ul id="humberger_menu" class="humberger_menu">
+                    <li><a href="#">初めての方へ</a></li>
+                    <li><a href="index.html#about">当院のご紹介</a></li>
+                    <li><a href="index.html#medical">診療案内</a></li>
+                    <li><a href="#">インプラント</a></li>
+                    <li><a href="index.html#recruit">採用情報</a></li>
+                    <li><a href="index.html#info">診療時間</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                    <li><a href="#">DOCIOR</a></li>
+                    <li><a href="index.html#schedule">SCHEDULE</a></li>
+                    <li><a href="index.html#staff">STAFF</a></li>
+                    <li><a href="index.html#insta">ALBUM</a></li>
+                    <li><a href="index.html#news">NEWS&TOPICS</a></li>
+                    <li><a href="index.html#blog">BLOG</a></li>
+                </ul>
+
+                <div class="contact">
+                    <a class="item" href="tel:052-0000-0000">診療専用ダイヤル<span>052-0000-0000</span></a>
+                    <a class="item" href="tel:052-0000-0000">インプラント専用ダイヤル<span>052-0000-0000</span></a>
+                </div>
+                <div class="contact_humberger"></div>
+                <div class="contact_menu">
+                    <a class="item" href="tel:052-0000-0000">診療専用ダイヤル<span>052-0000-0000</span></a>
+                    <a class="item" href="tel:052-0000-0000">インプラント専用ダイヤル<span>052-0000-0000</span></a>
+                </div>
+            </div><!-- inner -->
+        </header><!-- header -->
+
+        <div class="key">
+                <h1 class="text">お問い合わせ</h1>
+        </div><!-- key -->
+
+        <div class="section">
+            <div class="inner">
+
+                <div class="sec-header">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Catwork歯科医院</a></li>
+                        <li>> お問い合わせ</li>
+                    </ul><!-- breadcrumb -->
+
+                    <div class="sns-icons">
+                        <a class="icon01" href="#"><img src="images/contact02.png" alt="キャットワークのfacebook"></a>
+                        <a class="icon02" href="#"><img src="images/contact03.png" alt="キャットワークのinstagram"></a>
+                    </div><!-- sns-icons -->
+                </div><!-- sec-header -->
+
+                <h2>お問い合わせ</h2>
+                <form action=""></form>
+
+                <div class="cont-box contact-box">
+                    <form id="mailformpro" action="mailformpro/mailformpro.cgi" method="POST">
+                        <table>
+                            <tr>
+                                <th><label for="name">お名前<span>※</span></label></th>
+                                <td><input type="text" id="name" name="name" placeholder="例） 山田 太郎" required></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">メールアドレス<span>※</span></label></th>
+                                <td><input type="email" id="email" name="email" placeholder="例） ◯◯＠◯◯.jp" required></td>
+                            </tr>
+                            <tr>
+                                <th><label for="tel">電話番号<span>※</span></label></th>
+                                <td><input type="tel" id="tel" name="tel" placeholder="例） ◯◯◯-◯◯◯◯-◯◯◯◯" required></td>
+                            </tr>
+                            <tr>
+                                <th>ご相談内容</th>
+                                <td class="checkboxs">
+                                    <p><input type="checkbox" id="care1" name="care" value="1" checked="checked"><label for="care1">インプラント</label></p>
+                                    <p><input type="checkbox" id="care2" name="care" value="2"><label for="care2">入れ歯</label></p>
+                                    <p><input type="checkbox" id="care3" name="care" value="3"><label for="care3">虫歯治療</label></p>
+                                    <p><input type="checkbox" id="care4" name="care" value="4"><label for="care4">親知らず</label></p>
+                                    <p><input type="checkbox" id="care5" name="care" value="5"><label for="care5">予防歯科</label></p>
+                                    <p><input type="checkbox" id="care6" name="care" value="6"><label for="care6">矯正</label></p>
+                                    <p><input type="checkbox" id="care7" name="care" value="7"><label for="care7">ホワイトニング</label></p>
+                                    <p><input type="checkbox" id="care8" name="care" value="8"><label for="care8">その他</label></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>お問い合わせ内容</th>
+                                <td><textarea name="" id="" placeholder="例） お問い合わせ内容をこちらにお書きください。" ></textarea></td>
+                            </tr>
+
+                        </table>
+
+                        <p class="agree-check"><input type="checkbox" name="agree" value="1">下記の個人情報保護方針に同意して送信する</p>
+
+                        <p class="submit-btn"><input type="submit" value="入力内容を確認する"></p>
+
+                    </form>
+                    <script type="text/javascript" id="mfpjs" src="mailformpro/mailformpro.cgi" charset="UTF-8"></script>
+
+
+                    <div class="privacy">
+
+                        <h3>プライバシーポリシー</h3>
+
+                        <div class="text-box">
+                            <h4>タイトル</h4>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+                            <h4>タイトル</h4>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+
+                    </div>
+                </div><!-- contact-box -->
+
+            </div><!-- inner -->
+
+
+
+        </div><!-- section -->
+
+        <footer class="footer">
+
+            <h2><img src="images/footer_logo.png" alt="歯科医院キャットワークのウェブサイトです。"></h2>
+
+            <ul>
+                <li><a href="">初めての方へ</a></li>
+                <li><a href="index.html#about">当院のご紹介</a></li>
+                <li><a href="index.html#medical">診療案内</a></li>
+                <li><a href="#">インプラント</a></li>
+                <li><a href="index.html#recruit">採用情報</a></li>
+                <li><a href="index.html#info">診療時間</a></li>
+                <li><a href="index.html#schedule">医師カレンダー</a></li>
+                <li><a href="index.html#staff">スタッフ</a></li>
+                <li><a href="index.html#insta">お友達アルバム</a></li>
+                <li><a href="index.html#blog">ブログ</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+
+            <p class="copy"><small>Copyright © Catwork All Rights Reserved.</small></p>
+
+
+
+            <div id="return-top">
+                <a class="scroll-top" href="#">PAGE<br>TOP</a>
+            </div>
+
+        </footer>
+
+
+
+    </div><!-- wrap -->
+</body>
+</html>

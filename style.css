@@ -258,7 +258,7 @@ a:hover {
 	background-color: #fff;
 	font-family: "noto-sans-cjk-jp";
 	font-size: 14px;
-	color: #2c2c2c;
+	color: #f39800;
 	line-height: 1;
 	text-align: center;
 	padding: 10px 0 14px;
@@ -375,34 +375,13 @@ a:hover {
 		border: 2px solid #f39800;
 		border-radius: 8px;
 		padding: 5px;
+		background: #fff;
 	}
 
     .humberger li {
         height: 2px;
 		background: #f39800;
 		margin: 5px 0 10px;
-	}
-
-	.humberger_menu {
-		background: rgba(255, 255, 255, .95);
-		position: absolute;
-		top: 64px;
-		width: 100%;
-		height: 100vh;
-		overflow-y: scroll;
-		text-align: center;
-	}
-
-	.humberger_menu li {
-		width: 100%;
-		border-bottom: 1px solid #ccc;
-	}
-
-	.humberger_menu li a {
-		display: block;
-		width: 100%;
-		padding: 30px 0;
-		font-size: 16px;
 	}
 
 	.header .contact {
@@ -446,7 +425,7 @@ a:hover {
 		right: 81px;
 		width: 46px;
 		height: 46px;
-		background: rgba(255, 255, 255, .7) url(images/icon02.png) center center/35px no-repeat;
+		background: rgba(255, 255, 255, 1) url(images/icon02.png) center center/35px no-repeat;
 		border:  2px solid #f39800;
 		border-radius: 8px;
 	}
@@ -481,6 +460,32 @@ a:hover {
 		margin: 9px 0 0;
 	}
 
+}
+
+
+/* =================humbergermenu=============== */
+
+.humberger_menu {
+	background: rgba(255, 255, 255, 1);
+	position: fixed;
+	top: 64px;
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	text-align: center;
+	z-index: 100;
+}
+
+.humberger_menu li {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+
+.humberger_menu li a {
+	display: block;
+	width: 100%;
+	padding: 30px 0;
+	font-size: 16px;
 }
 
 
@@ -2883,6 +2888,7 @@ a:hover {
 	line-height: 1;
 	text-align: center;
 	box-sizing: border-box;
+	z-index: 50;
 }
 
 

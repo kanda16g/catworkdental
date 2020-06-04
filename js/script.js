@@ -1,259 +1,147 @@
-/* ハンバーガー */
 $(function() {
 
-    var humMenu = $("#humberger_menu");
 
-    humMenu.hide();
+/* ハンバーガー */
+var humMenu = $("#humberger_menu");
 
-    $(".humberger").click(function() {
-        $(humMenu).slideToggle(200);
-    });
+humMenu.hide();
 
-    var conMenu = $(".contact_menu");
+$(".humberger").click(function() {
+    $(humMenu).slideToggle(200);
+});
 
-    conMenu.hide();
+var conMenu = $(".contact_menu");
 
-    $(".contact_humberger").click(function() {
-        $(conMenu).slideToggle(200);
-    });
+conMenu.hide();
+
+$(".contact_humberger").click(function() {
+    $(conMenu).slideToggle(200);
 });
 
 
-// ハンバーガー開いたまま、ブラウザ幅を広げたときの修正
-$(function() {
+// ハンバーガーメニューを開いたまま、ブラウザ幅を広げたときの調整
+$(window).resize(function() {
  
-  
-  $(window).resize(function() {
- 
-   
-    var w = $(window).width();
+var w = $(window).width();
 
-        if(w < 701) {
-            $(".contact_menu").hide();
-        }
+    if(w < 701) {
+        $(".contact_menu").hide();
+    }
 
-        if(w < 881) {
-            $(".humberger_menu").hide();
-        }
-    });
+    if(w < 881) {
+        $(".humberger_menu").hide();
+    }
+});
  
-  });
 
 /* スクロールトップ */
-$(function() {
+var returnTop = $("#return-top");
 
-    var returnTop = $("#return-top");
+returnTop.hide();
 
-    returnTop.hide();
-
-    $(window).scroll(function() {
-        if($(this).scrollTop() > 800 ) {
-            returnTop.fadeIn();
-        } else {
-            returnTop.fadeOut();
-        }
-    });
-
-    returnTop.click(function() {
-        $("body, html").animate({scrollTop: 0}, 1000);
-
-        return false;
-    })
+$(window).scroll(function() {
+    if($(this).scrollTop() > 800 ) {
+        returnTop.fadeIn();
+    } else {
+        returnTop.fadeOut();
+    }
 });
+
+returnTop.click(function() {
+    $("body, html").animate({scrollTop: 0}, 1000);
+
+    return false;
+})
 
 
 /* グロナビ追従,色変化 */
+var w = $(window).width();
 
-$(function() {
+    $(window).on('load scroll', function() {
 
-    var w = $(window).width();
-    var x = 881;
-    if (w > x) {
+        if($(this).scrollTop() > 800 ) {
 
-        $(window).on('load scroll', function() {
+            $("#header").css({
+                position: "fixed",
+                background: "#fff"}
+            );
 
-            if($(this).scrollTop() > 800 ) {
+            $(".header .logo img").attr("src", "images/clone_logo.png");
 
-                $("#header").css({
-                    position: "fixed",
-                    background: "#fff"}
-                );
+            $("nav a").css("color", "#949494");
 
-                $(".header .logo img").attr("src", "images/clone_logo.png");
+            $(".contact .item").css( {
+                color: "#fff",
+                background: "#f39800" }
+            );
 
-                $("nav a").css("color", "#949494");
+            $(".contact .item span").css("color", "#fff");
 
-                $(".contact .item").css( {
-                    color: "#fff",
-                    background: "#f39800" }
-                );
+            $(".contact .item span").css("background", "url(images/icon01.png) left 10px bottom no-repeat");
 
-                $(".contact .item span").css("color", "#fff");
+            $(".glonav li:nth-of-type(1)").css("background", "url(images/clone_nav01.png) center center no-repeat");
 
-                $(".contact .item span").css("background", "url(images/icon01.png) left 10px bottom no-repeat");
+            $(".glonav li:nth-of-type(2)").css("background", "url(images/clone_nav02.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(1)").css("background", "url(images/clone_nav01.png) center center no-repeat");
+            $(".glonav li:nth-of-type(3)").css("background", "url(images/clone_nav03.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(2)").css("background", "url(images/clone_nav02.png) center center no-repeat");
+            $(".glonav li:nth-of-type(4)").css("background", "url(images/clone_nav04.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(3)").css("background", "url(images/clone_nav03.png) center center no-repeat");
+            $(".glonav li:nth-of-type(5)").css("background", "url(images/clone_nav05.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(4)").css("background", "url(images/clone_nav04.png) center center no-repeat");
+            $(".glonav li:nth-of-type(6)").css("background", "url(images/clone_nav06.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(5)").css("background", "url(images/clone_nav05.png) center center no-repeat");
+            $(".glonav li:nth-of-type(7)").css("background", "url(images/clone_nav07.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(6)").css("background", "url(images/clone_nav06.png) center center no-repeat");
+        } else {
 
-                $(".glonav li:nth-of-type(7)").css("background", "url(images/clone_nav07.png) center center no-repeat");
+            $("#header").css({
+                position: "absolute",
+                background: "transparent"}
+            );
 
-            } else {
+            $(".header .logo img").attr("src", "images/header_logo.png");
 
-                $("#header").css({
-                    position: "absolute",
-                    background: "transparent"}
-                );
+            $("nav a").css("color", "#fff");
 
-                $(".header .logo img").attr("src", "images/header_logo.png");
+            $(".contact .item").css( {
+                color: "#f39800",
+                background: "#fff" }
+            );
 
-                $("nav a").css("color", "#fff");
+            $(".contact .item span").css("color", "#f39800");
 
-                $(".contact .item").css( {
-                    color: "#f39800",
-                    background: "#fff" }
-                );
+            $(".contact .item span").css("background", "url(images/icon02.png) left 10px bottom no-repeat");
 
-                $(".contact .item span").css("color", "#f39800");
+            $(".glonav li:nth-of-type(1)").css("background", "url(images/header_nav01.png) center center no-repeat");
 
-                $(".contact .item span").css("background", "url(images/icon02.png) left 10px bottom no-repeat");
+            $(".glonav li:nth-of-type(2)").css("background", "url(images/header_nav02.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(1)").css("background", "url(images/header_nav01.png) center center no-repeat");
+            $(".glonav li:nth-of-type(3)").css("background", "url(images/header_nav03.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(2)").css("background", "url(images/header_nav02.png) center center no-repeat");
+            $(".glonav li:nth-of-type(4)").css("background", "url(images/header_nav04.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(3)").css("background", "url(images/header_nav03.png) center center no-repeat");
+            $(".glonav li:nth-of-type(5)").css("background", "url(images/header_nav05.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(4)").css("background", "url(images/header_nav04.png) center center no-repeat");
+            $(".glonav li:nth-of-type(6)").css("background", "url(images/header_nav06.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(5)").css("background", "url(images/header_nav05.png) center center no-repeat");
+            $(".glonav li:nth-of-type(7)").css("background", "url(images/header_nav07.png) center center no-repeat");
 
-                $(".glonav li:nth-of-type(6)").css("background", "url(images/header_nav06.png) center center no-repeat");
+        }
 
-                $(".glonav li:nth-of-type(7)").css("background", "url(images/header_nav07.png) center center no-repeat");
-
-            }
-
-        });
-    }
-
-});
+    });
 
 
-/* 幅880px以下ヘッダー色変化で固定 */
-
-$(function() {
-    var w = $(window).width();
-    var x = 880;
-    if (w <= x) {
-
-        $("#header").css( {
-            background: "#fff",
-            position: "fixed"
-        });
-
-        $(".header .logo img").attr( {
-            src: "images/clone_logo.png"
-        });
-
-        $('.contact .item').css({
-            color: "#fff",
-            background: "#f39800"
-        });
-
-        $('.contact .item span').css({
-            color: "#fff",
-            background: "#f39800"
-        });
-    } else {
-
-        $("#header").css( {
-            background: "transparent",
-            position: "absolute"
-        });
-
-        $(".header .logo img").attr( {
-            src: "images/header_logo.png"}
-        );
-
-        $('.contact .item').css({
-            color: "#f39800",
-            background: "#fff"
-        });
-
-        $('.contact .item span').css({
-            color: "#f39800",
-            background: "#fff"
-        });
-
-
-    }
-});
-
-$(window).on('load resize', function(){
-    var w = $(window).width();
-    var x = 880;
-    if (w <= x) {
-
-        $("#header").css( {
-            background: "#fff",
-            position: "fixed"
-        });
-
-        $(".header .logo img").attr( {
-            src: "images/clone_logo.png"
-        });
-
-        $('.contact .item').css({
-            color: "#fff",
-            background: "#f39800"
-        });
-
-        $('.contact .item span').css({
-            color: "#fff",
-            background: "url(images/icon01.png) left 10px bottom no-repeat"
-        });
-
-    } else {
-
-        $("#header").css( {
-            background: "transparent",
-            position: "absolute"
-        });
-
-        $(".header .logo img").attr( {
-            src: "images/header_logo.png"
-        });
-
-        $('.contact .item').css({
-            color: "#f39800",
-            background: "#fff"
-        });
-
-        $('.contact .item span').css({
-            color: "#f39800",
-            background: "url(images/icon02.png) left 10px bottom no-repeat"
-        });
-    }
-
-  });
 
 // ページ内リンクスクロール
-$(function() {
+$('a[href^="#"]:not([href="#"])').click(function() {
+    var target = $($(this).attr('href')).offset().top;
+    $('html, body').animate({scrollTop: target}, 600);
+    return false;
+});
 
-    $('a[href^="#"]:not([href="#"])').click(function() {
-        var target = $($(this).attr('href')).offset().top;
-        $('html, body').animate({scrollTop: target}, 600);
-        return false;
-    });
+
+
 });
 
   //Webフォント
